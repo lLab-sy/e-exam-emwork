@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "user",
+    "password": "password",
+    "database": "exams_db",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
