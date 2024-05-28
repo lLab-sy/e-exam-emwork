@@ -23,7 +23,8 @@ function renderExams() {
   exams.forEach(exam => {
     const examItem = document.createElement('div');
     const hasNullResult = Object.values(exam.result).some(value => value === null);
-    let status = hasNullResult ? 'รอพิจารณา' : 'Approved';
+    const hasEmpty = (exam.result.color == '') + (exam.result.long == '') + (exam.result.slant == '') + (exam.result.reflex == '') + (exam.result.practice == '')
+    let status = (hasNullResult || hasEmpty) ? 'รอพิจารณา' : 'Approved';
     if(status == 'Approved'){
         const scoreA = (exam.result.color == 'P') + (exam.result.long == 'P') + (exam.result.slant == 'P') + (exam.result.reflex == 'P') 
         const scoreB = exam.result.sign + exam.result.line + exam.result.giving
@@ -47,17 +48,17 @@ function renderExams() {
     examItem.classList.add('examItem');
     examItem.innerHTML = `
       <h3>${exam.name} ${exam.surname}</h3>
-      <p>Status: ${status}</p>
-      <p>Result:</p>
+      <p>ผลการสอบ: ${status}</p>
+      <p>คะแนนที่ได้:</p>
       <ul>
-        <li>Color: ${exam.result.color}</li>
-        <li>Long: ${exam.result.long}</li>
-        <li>Slant: ${exam.result.slant}</li>
-        <li>Reflex: ${exam.result.reflex}</li>
-        <li>Sign: ${exam.result.sign}</li>
-        <li>Line: ${exam.result.line}</li>
-        <li>Giving: ${exam.result.giving}</li>
-        <li>Practice: ${exam.result.practice}</li>
+        <li>ทดสอบตาบอดสี: ${exam.result.color}</li>
+        <li>ทดสอบสายตายาว: ${exam.result.long}</li>
+        <li>ทดสอบสายตาเอียง: ${exam.result.slant}</li>
+        <li>ทดสอบการตอบสนองของร่างการ: ${exam.result.reflex}</li>
+        <li>ป้ายจราจร: ${exam.result.sign}</li>
+        <li>เส้นจราจร: ${exam.result.line}</li>
+        <li>การให้ทาง: ${exam.result.giving}</li>
+        <li>ภาคปฏิบัติ: ${exam.result.practice}</li>
       </ul>
       <button onclick="showEditForm(${exam.id})">Edit</button>
       <button onclick="deleteExam(${exam.id})">Delete</button>
