@@ -1,11 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const { Sequelize, DataTypes } = require('sequelize');
 const app = express();
 const port = 3000;
 
 const sequelize = new Sequelize('exams_db', 'user', 'password', {
-  host: 'localhost',
-  dialect: 'postgres'
+    host: 'localhost',
+    dialect: 'postgres'
 });
 
 const Exam = require('./models/exam')(sequelize, DataTypes);
@@ -14,6 +15,7 @@ const Result = require('./models/result')(sequelize, DataTypes);
 sequelize.sync();
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('Hello World!');

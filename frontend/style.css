@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #examContainer {
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  #examList {
+    margin-bottom: 20px;
+  }
+  
+  .examItem {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #examFormContainer {
+    margin-top: 20px;
+  }
+  
+  #examForm input {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  #examStatusContainer {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    margin-top: 20px; /* Add some space from the top */
+  }
+  
+  #examStatus {
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+  }

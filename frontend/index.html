@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="examStatusContainer">
+        <div id="examStatus"></div> <!-- Display status here -->
+      </div>
+  <div id="examContainer">
+    <h1>Exam Management</h1>
+    <div id="examList"></div>
+    <button onclick="showCreateForm()">Add Exam</button>
+  </div>
+
+  <div id="examFormContainer" class="hidden">
+    <h2 id="formTitle">Add Exam</h2>
+    <form id="examForm" name="examForm">
+      <input type="hidden" id="examId">
+      <input type="text" id="examName" name="examName" placeholder="Name" value="test" required>
+      <input type="text" id="examSurname" placeholder="Surname" value="fronta" required>
+      <input type="text" id="examColor" placeholder="Color" value="P" required>
+      <input type="text" id="examLong" placeholder="Long" value="P" required>
+      <input type="text" id="examSlant" placeholder="Slant" value="P" required>
+      <input type="text" id="examReflex" placeholder="Reflex" value="P" required>
+      <input type="number" id="examSign" placeholder="Sign" value=32 required>
+      <input type="number" id="examLine" placeholder="Line" value=33 required>
+      <input type="number" id="examGiving" placeholder="Giving" value=34 required>
+      <input type="text" id="examPractice" placeholder="Practice" value="P" required>
+      <button type="submit" id="saveExamBtn" onclick="saveExam()">Save</button>
+      <button type="button" onclick="hideForm()">Cancel</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
